@@ -1,3 +1,4 @@
+from __future__ import annotations
 from types import TracebackType
 from typing import AsyncContextManager, Final, AsyncGenerator, Type
 import asyncio

@@ -1,8 +1,10 @@
-from enum import StrEnum
+from __future__ import annotations
+from enum import Enum
 from types import TracebackType
 from typing import Any, AsyncContextManager, AsyncGenerator, Final, Type
 import asyncio
 from logging import getLogger
+from exceptiongroup import ExceptionGroup
 
 from .utils.safe_cancel import cancel_task
 from ..common.status import RateLimitStatus
@@ -187,7 +189,7 @@ class AllRateLimiter(BaseRateLimiter):
         return _AllContextManager(self, self._rate_limiters, wait=wait, **kwargs)
 
 
-class _AllContextManagerState(StrEnum):
+class _AllContextManagerState(Enum):
     WAITING = "waiting"
     ACQUIRING = "acquiring"
     ACQUIRED = "acquired"

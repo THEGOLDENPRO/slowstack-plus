@@ -1,4 +1,5 @@
-from enum import StrEnum
+from __future__ import annotations
+from enum import Enum
 from types import TracebackType
 from typing import Any, AsyncContextManager, AsyncGenerator, AsyncIterator, Final, Type, TypeVar
 import asyncio
@@ -141,7 +142,7 @@ class AnyRateLimiter(BaseRateLimiter):
         return _AnyContextManager(self, wait=wait, **rate_limiter_kwargs)
 
 
-class _AnyContextManagerState(StrEnum):
+class _AnyContextManagerState(Enum):
     WAITING = "waiting"
     ACQUIRING = "acquiring"
     ACQUIRED = "acquired"

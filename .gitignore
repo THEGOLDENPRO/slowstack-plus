@@ -2,3 +2,5 @@
 poetry.lock
 .ruff_cache
 dist
+env
+.pytest_cache

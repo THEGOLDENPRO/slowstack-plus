@@ -1,3 +1,4 @@
+from __future__ import annotations
 from logging import getLogger
 from types import TracebackType
 from typing import Final, Generator, ContextManager, Type

@@ -1,7 +1,7 @@
-from enum import StrEnum
+from enum import Enum
 
 
-class RateLimitStatus(StrEnum):
+class RateLimitStatus(Enum):
     """
     The status of a rate limiter
 
